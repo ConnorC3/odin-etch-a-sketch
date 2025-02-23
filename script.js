@@ -22,13 +22,19 @@ function createGrid(size) {
         //add square to container
         container.appendChild(square);
     }
+
+    // update grid size info
+    const gridInfo = document.querySelector("span.grid-info");
+    gridInfo.textContent = `${size}x${size}`;
 }
 
 gridButton.addEventListener("click", () => {
     input = parseInt(prompt("Change grid size (<100): "));
     if (input <= 100) {
         createGrid(input);
-    } 
+    } else {
+        alert("Please enter a size less than 100")
+    }
 });
 
 createGrid(16);

@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -7,16 +9,24 @@ html {
 }
 
 body {
-    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.title {
+    margin: 16px;
+}
+
+h2.grid-info {
+    margin: 16px;
+    margin-top: 0;
+}
+
 .change-grid {
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .container {
