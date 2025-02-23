@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,4 +41,12 @@ h2.grid-info {
     background: white;
     border: 1px solid black;
     box-sizing: border-box;
+}
+
+/*  FOOTER  */
+
+footer {
+    margin-top: auto;
+    margin-bottom: 15px;
+    text-align: center;
 }
