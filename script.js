@@ -1,25 +1,34 @@
 // get elements
 const container = document.querySelector(".container");
+const containerWidth = container.clientWidth;
 const gridButton = document.querySelector(".change-grid");
 
-let numSquares = 16;
+function createGrid(size) {
+    // reset grid
+    container.innerHTML = "";
+
+    // create grid
+    for (let i = 0; i < size * size; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        square.style.width = `${containerWidth / size}px`;
+        square.style.height = `${containerWidth / size}px`;
+
+        //add hover functionality
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = "black";
+        });
+
+        //add square to container
+        container.appendChild(square);
+    }
+}
 
 gridButton.addEventListener("click", () => {
-    input = prompt("Change grid size: ");
-    numSquares = parseInt(input)
+    input = parseInt(prompt("Change grid size (<100): "));
+    if (input <= 100) {
+        createGrid(input);
+    } 
 });
 
-
-for (let i = 0; i < numSquares; i++){
-    const square = document.createElement("div");
-    square.classList.add("square");
-    container.appendChild(square);
-
-    square.addEventListener("mouseover", () => changeColor(square), {
-        once: true
-    });
-}
-
-function changeColor(elem){
-    elem.classList.add("active");
-}
+createGrid(16);
