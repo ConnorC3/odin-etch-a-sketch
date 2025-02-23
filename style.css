@@ -3,20 +3,29 @@
 }
 
 html {
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 body {
-    height: 100%; 
+    min-height: 100vh; 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.change-grid {
+    padding: 10px;
+    margin-bottom: 50px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 224px;
+    width: 238px;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .square {
@@ -26,8 +35,10 @@ body {
     height: 50px;
     width: 50px;
     background-color: grey;
+    border-radius: 7px;;
 }
 
-.square:hover {
+.square.active {
     background-color: black;
+    /* transition: background-color 500ms; */
 }
