@@ -9,18 +9,33 @@ function createGrid(size) {
 
     // create grid
     for (let i = 0; i < size * size; i++) {
-        const square = document.createElement("div");
-        square.classList.add("square");
-        square.style.width = `${containerWidth / size}px`;
-        square.style.height = `${containerWidth / size}px`;
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.style.width = `${containerWidth / size}px`;
+        cell.style.height = `${containerWidth / size}px`;
 
         //add hover functionality
-        square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+        cell.addEventListener("mouseover", () => {
+            let currOpacity = cell.style.opacity;
+
+            // randomly generated color
+            // let red = Math.floor(Math.random()*256);
+            // let blue = Math.floor(Math.random()*256);
+            // let green = Math.floor(Math.random()*256);
+            // cell.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+            
+            // black colored cell
+            cell.style.backgroundColor = "black";
+
+            if (currOpacity){
+                cell.style.opacity = Number(currOpacity) + 0.1;
+            } else {
+                cell.style.opacity = 0.1;
+            }
         });
 
-        //add square to container
-        container.appendChild(square);
+        //add cell to container
+        container.appendChild(cell);
     }
 
     // update grid size info

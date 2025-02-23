@@ -37,7 +37,7 @@ h2.grid-info {
     aspect-ratio: 1/1;
 }
 
-.square {
+.cell {
     background: white;
     border: 1px solid black;
     box-sizing: border-box;
