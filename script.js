@@ -45,7 +45,7 @@ function createGrid(size) {
 
 gridButton.addEventListener("click", () => {
     input = parseInt(prompt("Change grid size (0-100): "));
-    if (0 < input <= 100) {
+    if (input > 0 && input <= 100) {
         createGrid(input);
     } else {
         alert("Please enter a size greater than 0 and less than 100")
